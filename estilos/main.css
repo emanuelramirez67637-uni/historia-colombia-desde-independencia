@@ -64,6 +64,14 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 6.5vw, 88px); line-heig
 .stats strong { font-family: "Libre Caslon Text", serif; font-size: 28px; }
 .stats span { font-size: 11px; color: #68665f; }
 
+.current-president { min-height: 380px; display:grid; grid-template-columns:.8fr 1.2fr; background:var(--ink); color:white; }
+.current-president-photo { min-height:380px; background:linear-gradient(180deg,rgba(23,25,29,.05),rgba(23,25,29,.55)),url("../imagenes/presidentes/abelardo-espriella.jpg") center 20%/cover no-repeat; }
+.current-president-copy { align-self:center; max-width:650px; padding:48px 6vw; }
+.current-president-copy .eyebrow { color:#e5c877; }
+.current-president-copy h2 { margin:0 0 12px; font-size:clamp(38px,5vw,62px); }
+.current-president-copy p:not(.eyebrow) { color:rgba(255,255,255,.78); line-height:1.7; }
+.current-president-copy .button { margin-top:12px; }
+
 .section { padding: 90px 5vw; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 36px; }
 .section-heading h2, .memory-copy h2, .activity-card h2 { margin: 0; font-size: clamp(34px, 4vw, 54px); letter-spacing: -.03em; }
@@ -154,6 +162,8 @@ dialog h2 { margin: 0 0 16px; font-size: 42px; }
   .timeline { grid-template-columns: repeat(2, 1fr); }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
   .memory-section { grid-template-columns: 1fr; }
+  .current-president { grid-template-columns:1fr; }
+  .current-president-photo { min-height:420px; }
 }
 
 @media (max-width: 1200px) and (min-width: 901px) {
