@@ -49,4 +49,31 @@
     const open = nav.classList.toggle("open");
     button.setAttribute("aria-expanded", String(open));
   });
+
+  if (location.pathname.includes("/paginas/")) {
+    const categoryPages = items.filter(([label]) => label !== "Inicio");
+    const currentIndex = categoryPages.findIndex(([, , id]) => file.endsWith(id));
+    if (currentIndex >= 0) {
+      const toolbar = document.createElement("div");
+      toolbar.className = "page-interaction";
+      toolbar.innerHTML = `<label for="page-search">Buscar dentro de esta página</label><input id="page-search" type="search" placeholder="Ej.: víctimas, reforma, 1989..." autocomplete="off">`;
+      const hero = document.querySelector(".article-hero");
+      hero?.insertAdjacentElement("afterend", toolbar);
+
+      const pageSearch = toolbar.querySelector("#page-search");
+      pageSearch.addEventListener("input", () => {
+        const query = pageSearch.value.trim().toLocaleLowerCase();
+        document.querySelectorAll(".article-body > section").forEach((section) => {
+          section.hidden = Boolean(query) && !section.textContent.toLocaleLowerCase().includes(query);
+        });
+      });
+
+      const previous = categoryPages[(currentIndex - 1 + categoryPages.length) % categoryPages.length];
+      const next = categoryPages[(currentIndex + 1) % categoryPages.length];
+      const footerNav = document.createElement("nav");
+      footerNav.className = "page-stepper";
+      footerNav.innerHTML = `<a href="${previous[1]}"><span>Anterior</span><strong>${previous[0]}</strong></a><a href="${next[1]}"><span>Siguiente</span><strong>${next[0]}</strong></a>`;
+      document.querySelector(".article-layout")?.appendChild(footerNav);
+    }
+  }
 })();
