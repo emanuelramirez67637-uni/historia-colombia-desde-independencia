@@ -16,8 +16,7 @@
     ["Narcotráfico", prefix + pagesPrefix + "narcotrafico.html", "narcotrafico.html"],
     ["Masacres", prefix + pagesPrefix + "masacres.html", "masacres.html"],
     ["Guerrillas", prefix + pagesPrefix + "conflicto.html", "conflicto.html"],
-    ["Economía", prefix + pagesPrefix + "economia.html", "economia.html"],
-    ["Cultura", prefix + pagesPrefix + "cultura.html", "cultura.html"],
+    ["Economía y cultura", prefix + pagesPrefix + "economia.html", "economia.html"],
     ["Personajes", prefix + pagesPrefix + "personajes.html", "personajes.html"]
   ];
 
@@ -36,7 +35,7 @@
     const link = document.createElement("a");
     link.textContent = label;
     link.href = href;
-    if (file.endsWith(id) || (id === "index.html" && (file.endsWith("/") || file.endsWith("index.html")))) {
+    if (file.endsWith(id) || (id === "economia.html" && file.endsWith("cultura.html")) || (id === "index.html" && (file.endsWith("/") || file.endsWith("index.html")))) {
       link.className = "active";
       link.setAttribute("aria-current", "page");
     }
