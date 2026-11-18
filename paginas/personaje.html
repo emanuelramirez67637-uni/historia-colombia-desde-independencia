@@ -26,7 +26,7 @@ document.querySelector('#person-role').textContent=person.role;
 document.querySelector('#person-summary').textContent=person.text;
 document.querySelector('#person-legacy').textContent='La trayectoria de '+person.name+' debe interpretarse dentro de las tensiones políticas, sociales y culturales de su época. Su legado sigue siendo objeto de debate histórico y memoria pública.';
 if(person.image){
- document.querySelector('#person-portrait').style.backgroundImage=`linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),url('${person.image}')`;
+ document.querySelector('#person-portrait').style.backgroundImage=`linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),url('../${person.image}')`;
  document.querySelector('#portrait-caption').textContent='Archivo visual histórico o retrato conmemorativo: '+person.name+'. Wikimedia Commons.';
 }
 const events={

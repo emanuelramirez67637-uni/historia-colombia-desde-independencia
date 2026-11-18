@@ -36,7 +36,7 @@ nav a.active::after { content: ""; position: absolute; height: 2px; left: 0; rig
   align-items: end; gap: 5vw; padding: 70px 5vw 60px;
   background:
     linear-gradient(90deg, rgba(23,25,29,.94), rgba(23,25,29,.18)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Batalla_de_Boyac%C3%A1_por_Jos%C3%A9_Mar%C3%ADa_Espinosa_(1840).jpg?width=1800") center 38%/cover;
+    url("../imagenes/historia/boyaca.jpg") center 38%/cover;
   color: white;
 }
 .hero-copy { max-width: 790px; }
@@ -85,9 +85,9 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 6.5vw, 88px); line-heig
 .route-card:nth-child(2) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), #5e332d; }
 .route-card:nth-child(3) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), #5d625d; }
 .route-card:nth-child(4) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), #866d38; }
-.route-card:nth-child(1) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("https://commons.wikimedia.org/wiki/Special:FilePath/Batalla_de_Boyac%C3%A1_por_Jos%C3%A9_Mar%C3%ADa_Espinosa_(1840).jpg?width=1000") center/cover; }
-.route-card:nth-child(2) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("https://commons.wikimedia.org/wiki/Special:FilePath/Pablo_Escobar_Mug_(cropped).jpg?width=1000") center 25%/cover; }
-.route-card:nth-child(3) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_de_Justicia_de_Colombia%2C_Bogot%C3%A1.jpg?width=1000") center/cover; }
+.route-card:nth-child(1) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("../imagenes/historia/boyaca.jpg") center/cover; }
+.route-card:nth-child(2) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("../imagenes/historia/escobar.jpg") center 25%/cover; }
+.route-card:nth-child(3) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), url("../imagenes/historia/palacio.jpg") center/cover; }
 .route-card span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .route-card h3 { max-width: 560px; margin: 10px 0; font-size: 31px; }
 .route-card p { max-width: 580px; margin: 0; line-height: 1.6; color: rgba(255,255,255,.78); }

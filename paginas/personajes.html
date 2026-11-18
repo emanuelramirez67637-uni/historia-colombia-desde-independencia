@@ -7,7 +7,7 @@
   <a class="button" style="color:var(--ink);border-color:var(--ink)" href="../index.html#recorridos">Todos los recorridos</a>
 </header>
 <main>
-<section class="article-hero" style="--hero-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Jorge_Eli%C3%A9cer_Gait%C3%A1n_(1936).jpg?width=1800')">
+<section class="article-hero" style="--hero-image:url('../imagenes/historia/gaitan.jpg')">
   <p class="eyebrow" style="color:#e5c877">Galería biográfica</p>
   <h1>Personajes que transformaron Colombia</h1>
   <p class="lead">Selecciona una ficha para abrir una página independiente con su trayectoria, contexto y legado.</p>
@@ -20,7 +20,7 @@
 <script>
 const index=document.querySelector('#portrait-index');
 index.innerHTML=window.HISTORIA_CONTENT.people.map(person=>{
-  const image=person.image ? `url('${person.image}')` : 'linear-gradient(135deg,#315c78,#17191d)';
+  const image=person.image ? `url('../${person.image}')` : 'linear-gradient(135deg,#315c78,#17191d)';
   return `<a class="portrait-card" style="background-image:linear-gradient(180deg,rgba(23,25,29,.05),rgba(23,25,29,.94)),${image}" href="personaje.html?nombre=${person.slug}">
     <span>${person.role}</span><h2>${person.name}</h2><p>${person.text}</p>
   </a>`;

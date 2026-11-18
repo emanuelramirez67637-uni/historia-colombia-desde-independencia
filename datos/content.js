@@ -26,11 +26,11 @@ window.HISTORIA_CONTENT = {
     { year:"1990", title:"Asesinato de Carlos Pizarro Leongómez", summary:"El candidato presidencial fue asesinado a bordo de una aeronave.", responsible:"El atentado fue atribuido a estructuras políticas criminales; las investigaciones continúan con controversia.", location:"Bogotá" }
   ],
   people: [
-    { slug:"narino", name:"Antonio Nariño", role:"Político e independentista", text:"Impulsó la difusión de ideas republicanas y participó en el proceso de independencia.", image:"https://commons.wikimedia.org/wiki/Special:FilePath/Antonio_Nari%C3%B1o_por_Jos%C3%A9_Mar%C3%ADa_Espinosa.jpg?width=900" },
-    { slug:"santander", name:"Francisco de Paula Santander", role:"Militar y estadista", text:"Protagonista de la campaña libertadora y dirigente de la Nueva Granada.", image:"https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Paula_Santander_by_Acevedo_Bernal.jpg?width=900" },
-    { slug:"gaitan", name:"Jorge Eliécer Gaitán", role:"Político y líder popular", text:"Representó una transformación política basada en la movilización de sectores populares.", image:"https://commons.wikimedia.org/wiki/Special:FilePath/Jorge_Eli%C3%A9cer_Gait%C3%A1n_(1936).jpg?width=900" },
-    { slug:"marcano", name:"María Cano", role:"Activista y escritora", text:"Defendió los derechos laborales y difundió ideas políticas en las primeras décadas del siglo XX.", image:"https://commons.wikimedia.org/wiki/Special:FilePath/Maria_Cano.jpg?width=900" },
-    { slug:"garcia-marquez", name:"Gabriel García Márquez", role:"Escritor", text:"Su obra transformó la literatura colombiana y proyectó una visión cultural del país.", image:"https://commons.wikimedia.org/wiki/Special:FilePath/Gabriel_Garcia_Marquez.jpg?width=900" },
+    { slug:"narino", name:"Antonio Nariño", role:"Político e independentista", text:"Impulsó la difusión de ideas republicanas y participó en el proceso de independencia.", image:"imagenes/historia/narino.jpg" },
+    { slug:"santander", name:"Francisco de Paula Santander", role:"Militar y estadista", text:"Protagonista de la campaña libertadora y dirigente de la Nueva Granada.", image:"" },
+    { slug:"gaitan", name:"Jorge Eliécer Gaitán", role:"Político y líder popular", text:"Representó una transformación política basada en la movilización de sectores populares.", image:"imagenes/historia/gaitan.jpg" },
+    { slug:"marcano", name:"María Cano", role:"Activista y escritora", text:"Defendió los derechos laborales y difundió ideas políticas en las primeras décadas del siglo XX.", image:"" },
+    { slug:"garcia-marquez", name:"Gabriel García Márquez", role:"Escritor", text:"Su obra transformó la literatura colombiana y proyectó una visión cultural del país.", image:"imagenes/historia/garcia.jpg" },
     { slug:"clara-lopez", name:"Clara López", role:"Economista y política", text:"Ha participado en debates sobre economía, empleo y organización democrática.", image:"" },
     { slug:"abad-colorado", name:"Jesús Abad Colorado", role:"Fotoperiodista", text:"Documentó el conflicto armado y las comunidades afectadas por la violencia.", image:"" },
     { slug:"maria-eugenia-rojas", name:"María Eugenia Rojas", role:"Política", text:"Representó una trayectoria relevante en la política y las fuerzas armadas del siglo XX.", image:"" }
