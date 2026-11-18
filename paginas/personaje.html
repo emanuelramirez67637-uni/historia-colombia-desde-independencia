@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ficha biográfica — Colombia a través del tiempo</title><link rel="stylesheet" href="../estilos/paginas.css"></head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html"><span class="brand-mark">CT</span><span><strong>COLOMBIA</strong><small>A TRAVÉS DEL TIEMPO</small></span></a>
+  <a class="button" style="color:var(--ink);border-color:var(--ink)" href="personajes.html">Volver a personajes</a>
+</header>
+<main class="person-layout">
+  <figure class="person-portrait" id="person-portrait"><figcaption id="portrait-caption"></figcaption></figure>
+  <article class="person-content">
+    <p class="role" id="person-role"></p><h1 id="person-name"></h1><p id="person-summary"></p>
+    <h2>Trayectoria</h2><div class="person-timeline" id="person-timeline"></div>
+    <h2>Contexto y legado</h2><p id="person-legacy"></p>
+    <div class="source-list"><p class="eyebrow">Fuentes</p><a href="https://www.banrepcultural.org/">Banco de la República</a> · <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> · <a href="https://academiahistoria.org.co/">Academia Colombiana de Historia</a></div>
+  </article>
+</main>
+<script src="../datos/content.js"></script>
+<script>
+const params=new URLSearchParams(location.search);
+const slug=params.get('nombre') || 'narino';
+const person=(window.HISTORIA_CONTENT.people.find(item=>item.slug===slug) || window.HISTORIA_CONTENT.people[0]);
+document.title=person.name+' — Colombia a través del tiempo';
+document.querySelector('#person-name').textContent=person.name;
+document.querySelector('#person-role').textContent=person.role;
+document.querySelector('#person-summary').textContent=person.text;
+document.querySelector('#person-legacy').textContent='La trayectoria de '+person.name+' debe interpretarse dentro de las tensiones políticas, sociales y culturales de su época. Su legado sigue siendo objeto de debate histórico y memoria pública.';
+if(person.image){
+ document.querySelector('#person-portrait').style.backgroundImage=`linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),url('${person.image}')`;
+ document.querySelector('#portrait-caption').textContent='Archivo visual histórico o retrato conmemorativo: '+person.name+'. Wikimedia Commons.';
+}
+const events={
+ narino:[['Finales siglo XVIII','Participación en redes ilustradas y traducción de textos republicanos.'],['1810','Vinculación al proceso de gobierno propio y participación independentista.']],
+ santander:[['1819','Participación en la Campaña Libertadora y victoria en Boyacá.'],['1821–1830','Vicepresidencia y enfrentamiento con proyectos centralistas.']],
+ gaitan:[['1920–1930','Carrera jurídica, parlamentaria y organización política popular.'],['1948','Su asesinato desencadenó una crisis nacional y protestas masivas.']],
+ marcano:[['1920–1930','Organización obrera y difusión de ideas sindicales en Antioquia.'],['1930','Reconocimiento por su defensa de derechos laborales y sociales.']],
+ 'garcia-marquez':[['1947–1960','Periodismo y narrativa en Colombia y el Caribe.'],['1967','Publicación de Cien años de soledad y proyección internacional.']],
+ 'clara-lopez':[['1980–2000','Trayectoria académica y participación en organizaciones políticas y sociales.'],['2000–actualidad','Gobiernos, Congreso y debates sobre economía y política pública.']],
+ 'abad-colorado':[['1990–2000','Fotografía documental del conflicto armado y comunidades rurales.'],['Actualidad','Archivo visual dedicado a víctimas y memoria histórica.']],
+ 'maria-eugenia-rojas':[['Siglo XX','Trayectoria política vinculada a instituciones civiles y fuerzas militares.'],['Actualidad','Memoria de familias y procesos políticos del Frente Nacional.']]
+};
+(events[slug]||[['Contexto','Vida pública en un periodo marcado por cambios sociales, políticos y culturales.'],['Legado','Su nombre permanece asociado a debates y debates públicos actuales.']]).forEach(([time,text])=>{
+ const article=document.createElement('article');
+ article.innerHTML=`<time>${time}</time><p>${text}</p>`;
+ document.querySelector('#person-timeline').appendChild(article);
+});
+</script>
+</body>
+</html>

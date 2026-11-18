@@ -16,11 +16,11 @@ function renderTimeline(filter = "todos") {
 
 function renderPeople() {
   peopleGrid.innerHTML = content.people.map((person) => `
-    <article class="person-card">
+    <a class="person-card" href="paginas/personaje.html?nombre=${person.slug}" ${person.image ? `style="background-image:linear-gradient(180deg, transparent 15%, rgba(23,25,29,.94)), url('${person.image}')"` : ""}>
       <span>${person.role}</span>
       <h3>${person.name}</h3>
       <p>${person.text}</p>
-    </article>
+    </a>
   `).join("");
 }
 

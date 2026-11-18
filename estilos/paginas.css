@@ -49,11 +49,31 @@ figcaption a { color: inherit; }
 .dossier dd { margin:0; font-size:12px; line-height:1.55; }
 .victim-note { margin:28px 0; padding:18px 20px; border-left:3px solid var(--red); background:var(--paper); font-size:13px; line-height:1.7; }
 
+.portrait-index { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.portrait-card { min-height:390px; display:flex; flex-direction:column; justify-content:flex-end; padding:22px; color:white; text-decoration:none; background:linear-gradient(180deg,rgba(23,25,29,.05),rgba(23,25,29,.94)),var(--blue) center/cover; transition:transform .18s ease; }
+.portrait-card:hover { transform:translateY(-4px); }
+.portrait-card span { font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+.portrait-card h2 { margin:8px 0 6px; color:white; font-size:25px; }
+.portrait-card p { margin:0; color:rgba(255,255,255,.78); font-size:12px; line-height:1.55; }
+.person-layout { display:grid; grid-template-columns:minmax(280px,.75fr) 1.25fr; gap:52px; align-items:start; max-width:1100px; margin:auto; padding:70px 5vw 100px; }
+.person-portrait { min-height:520px; background:linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),var(--blue) center/cover; }
+.person-portrait figcaption { background:rgba(250,248,242,.94); color:#66635c; }
+.person-content h1 { margin:0 0 14px; font-family:"Libre Caslon Text",serif; font-size:58px; letter-spacing:-.04em; }
+.person-content .role { color:var(--red); font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+.person-content p { font-size:16px; line-height:1.8; color:#50504b; }
+.person-content h2 { margin-top:34px; font-size:30px; }
+.person-timeline { display:grid; gap:10px; }
+.person-timeline article { display:grid; grid-template-columns:85px 1fr; gap:16px; padding:12px 0; border-bottom:1px solid var(--line); }
+.person-timeline time { color:var(--red); font-family:"Libre Caslon Text",serif; }
+.person-timeline p { margin:0; font-size:13px; }
+
 @media (max-width: 900px) {
   .article-layout { grid-template-columns: 1fr; }
   .contents { position: static; }
   .archive-grid { grid-template-columns: 1fr; }
   .massacre-grid { grid-template-columns:1fr; }
+  .portrait-index { grid-template-columns:repeat(2,1fr); }
+  .person-layout { grid-template-columns:1fr; }
 }
 @media (max-width: 560px) {
   .article-hero { min-height: 380px; padding: 48px 20px 34px; }
@@ -61,4 +81,7 @@ figcaption a { color: inherit; }
   .article-body h2 { font-size: 32px; }
   .fact-box, .topic-list { grid-template-columns: 1fr; }
   .fact-box div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .portrait-index { grid-template-columns:1fr; }
+  .person-portrait { min-height:420px; }
+  .person-content h1 { font-size:42px; }
 }
