@@ -161,3 +161,12 @@ document.querySelector("#quiz-options").addEventListener("click", (event) => {
     feedback.textContent = "Revisa la cronología: el hecho clave ocurrió en Santa Fe de Bogotá.";
   }
 });
+
+document.querySelectorAll("img").forEach((image) => {
+  image.addEventListener("error", () => {
+    if (!image.dataset.fallback) {
+      image.dataset.fallback = "true";
+      image.src = "imagenes/historia/boyaca.jpg";
+    }
+  });
+});
