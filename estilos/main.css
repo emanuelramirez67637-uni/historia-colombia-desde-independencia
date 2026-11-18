@@ -16,7 +16,7 @@ button, input { font: inherit; }
 a { color: inherit; }
 
 .topbar {
-  height: 76px; position: sticky; top: 0; z-index: 20;
+  height: 58px; position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5vw; background: rgba(250, 248, 242, .96);
   border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
@@ -26,7 +26,7 @@ a { color: inherit; }
 .brand strong, .brand small { display: block; }
 .brand strong { font-family: "Libre Caslon Text", serif; font-size: 15px; letter-spacing: .06em; }
 .brand small { margin-top: 2px; font-size: 8px; letter-spacing: .22em; }
-nav { display: flex; gap: 28px; }
+nav { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
 nav a { position: relative; text-decoration: none; font-size: 13px; font-weight: 600; }
 nav a.active::after { content: ""; position: absolute; height: 2px; left: 0; right: 0; bottom: -11px; background: var(--red); }
 .menu-button { display: none; border: 0; background: none; }
@@ -87,7 +87,7 @@ h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 6.5vw, 88px); line-heig
 .timeline-card p { margin: 0; color: #67655f; line-height: 1.55; font-size: 13px; }
 .timeline-card:hover { background: var(--paper); }
 
-.routes-section { background: #f7f4ec; }
+.routes-section { padding-top: 64px; background: #f7f4ec; }
 .routes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .route-card { min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; color: white; text-decoration: none; background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), var(--blue); }
 .route-card:nth-child(2) { background: linear-gradient(180deg, rgba(23,25,29,.08), rgba(23,25,29,.92)), #5e332d; }
@@ -153,7 +153,7 @@ dialog h2 { margin: 0 0 16px; font-size: 42px; }
 .detail-grid p { color: #65645f; line-height: 1.65; }
 
 @media (max-width: 900px) {
-  nav { display: none; position: absolute; left: 0; right: 0; top: 76px; padding: 24px 5vw; background: var(--cream); border-bottom: 1px solid var(--line); }
+  nav { display: flex; overflow-x: auto; position: relative; height:58px; padding:0 20px; background: var(--cream); }
   nav.open { display: grid; }
   .menu-button { display: block; }
   .hero { grid-template-columns: 1fr; }
