@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17191d">
+  <title>Colombia a través del tiempo</title>
+  <meta name="description" content="Enciclopedia interactiva de la historia, la sociedad y la memoria histórica de Colombia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/main.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">CT</span>
+      <span><strong>COLOMBIA</strong><small>A TRAVÉS DEL TIEMPO</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button>
+    <nav id="main-nav" aria-label="Navegación principal">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#epocas">Épocas</a>
+      <a href="#personajes">Personajes</a>
+      <a href="#memoria">Memoria</a>
+      <a href="#atentados">Atentados</a>
+      <a href="#actividades">Actividades</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Archivo histórico digital · 1810—2026</p>
+        <h1>Una nación se entiende a través de su memoria.</h1>
+        <p class="lead">Explora los procesos que construyeron a Colombia: independencias, conflictos, cambios sociales, cultura y memoria histórica.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#epocas">Comenzar el recorrido</a>
+          <button class="button button-ghost" id="random-event" type="button">Descubrir un acontecimiento</button>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Búsqueda histórica">
+        <p>BUSCADOR HISTÓRICO</p>
+        <label for="search">Personas, hechos, épocas o documentos</label>
+        <div class="search-box">
+          <input id="search" type="search" placeholder="Ej.: Boyacá, Bolívar..." autocomplete="off">
+          <span aria-hidden="true">⌕</span>
+        </div>
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+      </aside>
+    </section>
+
+    <section class="stats" aria-label="Cobertura del proyecto">
+      <div><strong id="event-count">12</strong><span>acontecimientos</span></div>
+      <div><strong>216</strong><span>años recorridos</span></div>
+      <div><strong id="person-count">8</strong><span>personajes</span></div>
+      <div><strong>10</strong><span>épocas históricas</span></div>
+    </section>
+
+    <section id="epocas" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Cronología</p><h2>Épocas para explorar</h2></div>
+        <div class="filters" aria-label="Filtrar acontecimientos">
+          <button class="filter active" data-filter="todos" type="button">Todos</button>
+          <button class="filter" data-filter="independencia" type="button">Independencia</button>
+          <button class="filter" data-filter="sigloxx" type="button">Siglo XX</button>
+          <button class="filter" data-filter="actualidad" type="button">Actualidad</button>
+        </div>
+      </div>
+      <div id="timeline" class="timeline" aria-live="polite"></div>
+    </section>
+
+    <section id="personajes" class="section archive-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Personajes y voces</p><h2>Las personas detrás de la historia</h2></div>
+      </div>
+      <div id="people-grid" class="people-grid"></div>
+    </section>
+
+    <section id="memoria" class="section memory-section">
+      <div class="memory-copy">
+        <p class="eyebrow">Memoria histórica</p>
+        <h2>Reconocer el pasado para comprender el presente</h2>
+        <p>La memoria histórica reúne hechos, testimonios e investigaciones para reconocer a las víctimas y comprender las causas y consecuencias de la violencia.</p>
+        <a class="text-link" href="#actividades">Explorar actividades →</a>
+      </div>
+      <div class="memory-cards">
+        <article><span>1948</span><h3>El Bogotazo</h3><p>Un punto de ruptura en la historia política y social del país.</p></article>
+        <article><span>1958—1974</span><h3>Frente Nacional</h3><p>Alternancia de partidos y surgimiento del conflicto armado.</p></article>
+        <article><span>2016</span><h3>Acuerdo de paz</h3><p>El cierre negociado de más de medio siglo de confrontación con las FARC-EP.</p></article>
+      </div>
+    </section>
+
+    <section id="atentados" class="section attacks-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Narcotráfico y violencia política</p><h2>Atentados contra el Estado y líderes civiles</h2></div>
+      </div>
+      <div id="attacks-grid" class="attacks-grid"></div>
+      <p class="source-note">Contexto basado en fuentes institucionales, judiciales y periodísticas verificables. Las cifras deben contrastarse con las investigaciones vigentes.</p>
+    </section>
+
+    <section id="actividades" class="section activity-section">
+      <div class="activity-card">
+        <div>
+          <p class="eyebrow">Actividad interactiva</p>
+          <h2>Prueba tu recorrido</h2>
+          <p id="quiz-question">¿Dónde se declaró la independencia en 1810?</p>
+        </div>
+        <div class="quiz-options" id="quiz-options"></div>
+        <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">CT</span><span><strong>COLOMBIA</strong><small>A TRAVÉS DEL TIEMPO</small></span></div>
+    <p>Proyecto educativo de consulta crítica y memoria histórica.</p>
+  </footer>
+
+  <dialog id="detail-dialog">
+    <button class="dialog-close" type="button" aria-label="Cerrar">×</button>
+    <p id="detail-period" class="eyebrow"></p>
+    <h2 id="detail-title"></h2>
+    <p id="detail-summary" class="detail-summary"></p>
+    <div class="detail-grid">
+      <div><h3>Contexto</h3><p id="detail-context"></p></div>
+      <div><h3>Consecuencias</h3><p id="detail-impact"></p></div>
+    </div>
+  </dialog>
+
+  <script src="datos/content.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
