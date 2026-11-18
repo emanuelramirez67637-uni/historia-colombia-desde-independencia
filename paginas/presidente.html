@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Presidente — Colombia a través del tiempo</title><link rel="stylesheet" href="../estilos/paginas.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="../index.html"><span class="brand-mark">CT</span><span><strong>COLOMBIA</strong><small>A TRAVÉS DEL TIEMPO</small></span></a><a class="button" style="color:var(--ink);border-color:var(--ink)" href="presidentes.html">Todos los presidentes</a></header>
+<main class="person-layout">
+<aside class="person-portrait" id="president-photo" style="min-height:520px"></aside>
+<article class="person-content">
+<p class="role" id="president-period"></p><h1 id="president-name"></h1><p id="president-summary"></p>
+<h2>Contexto de llegada al poder</h2><p id="president-context"></p>
+<h2>Principales decisiones y reformas</h2><div class="topic-list" id="president-policies"></div>
+<h2>Controversias y legado</h2><p id="president-legacy"></p>
+<div class="source-list"><p class="eyebrow">Fuentes</p><a href="https://www.presidencia.gov.co/">Presidencia de la República</a> · <a href="https://www.registraduria.gov.co/">Registraduría Nacional</a> · <a href="https://www.banrepcultural.org/">Banco de la República</a></div>
+</article>
+</main>
+<script src="../scripts/header.js"></script>
+<script>
+const presidents={
+ 'alvaro-uribe':{
+ name:'Álvaro Uribe Vélez',period:'2002–2010 · Partido Primero Colombia',
+ summary:'Fue presidente de Colombia durante dos periodos consecutivos y lideró una política de confrontación ampliada contra grupos armados.',
+ context:'Llegó al poder en medio de una crisis de seguridad, secuestros, debilidad regional del Estado y negociación fallida con las FARC-EP.',
+ policies:[
+ ['Seguridad Democrática','Aumentó presencia militar y policial y buscó recuperar control territorial.'],
+ ['Plan para la reintegración','Promovió desmovilizaciones de grupos armados y procesos de Justicia y Paz.'],
+ ['Economía y inversión','Impulsó confianza inversionista, reformas y programas sociales con apoyo económico internacional.'],
+ ['Reforma política','Su mandato incluyó cambios constitucionales que permitieron su reelección inmediata.']
+ ],
+ legacy:'Su gobierno fue asociado con avances territoriales contra grupos armados y críticas por falsos positivos, espionaje, parapolítica y expansión presidencial. Los efectos deben evaluarse con sentencias, cifras oficiales y análisis diversos.',
+ photo:'../imagenes/presidentes/alvaro-uribe.jpg'
+ },
+ 'juan-manuel-santos':{
+ name:'Juan Manuel Santos',period:'2010–2018 · Partido de la U',
+ summary:'Dirigió los procesos de negociación con las FARC-EP y firmó el Acuerdo Final de Paz de 2016.',
+ context:'Llegó al poder tras la herencia de Seguridad Democrática y continuó procesos militares y internacionales.',
+ policies:[['Acuerdo de paz','Negociación y firma con las FARC-EP.'],['Reforma territorial','Implementación rural y descentralización.'],['Paz y posconflicto','Creación de JEP y otras instituciones.']],
+ legacy:'Fue premiado con el Nobel de Paz en 2016; la implementación posterior estuvo marcada por avances y desafíos.',
+ photo:''
+ },
+ 'gustavo-petro':{
+ name:'Gustavo Petro',period:'2022–2026 · Pacto Histórico',
+ summary:'Primer presidente de izquierda elegido por voto popular y promotor de reformas sociales, económicas y de paz.',
+ context:'Su victoria ocurrió tras movilizaciones sociales, crisis económicas y un rechazo a partidos tradicionales.',
+ policies:[['Paz Total','Negociación y reducción de violencia con actores armados.'],['Reformas sociales','Cambios en salud, pensiones, trabajo y educación.'],['Transición energética','Promoción de políticas climáticas y energéticas.']],
+ legacy:'Su gobierno enfrenta debates sobre reforma, crecimiento económico, seguridad y resultados de Paz Total.',
+ photo:''
+ }
+};
+const slug=new URLSearchParams(location.search).get('nombre')||'alvaro-uribe';
+const president=presidents[slug]||presidents['alvaro-uribe'];
+document.title=president.name+' — Colombia a través del tiempo';
+document.querySelector('#president-name').textContent=president.name;
+document.querySelector('#president-period').textContent=president.period;
+document.querySelector('#president-summary').textContent=president.summary;
+document.querySelector('#president-context').textContent=president.context;
+document.querySelector('#president-legacy').textContent=president.legacy;
+if(president.photo){
+ document.querySelector('#president-photo').style.backgroundImage=`linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),url('${president.photo}')`;
+}
+const policies=document.querySelector('#president-policies');
+president.policies.forEach(([title,text])=>{
+ const card=document.createElement('article');
+ card.innerHTML=`<h3>${title}</h3><p>${text}</p>`;
+ policies.appendChild(card);
+});
+</script>
+</body></html>
