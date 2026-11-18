@@ -1,6 +1,6 @@
 @import url("main.css");
 
-.topbar nav { display:flex; align-items:center; gap:10px; }
+.topbar nav { display:flex; align-items:center; gap:10px; max-width:72vw; overflow-x:auto; }
 .topbar nav a { position:relative; font-size:11px; white-space:nowrap; text-decoration:none; }
 .topbar nav a.active::after { content:""; position:absolute; left:0; right:0; bottom:-8px; height:2px; background:var(--red); }
 .topbar .menu-button { display:none; border:0; background:none; cursor:pointer; }

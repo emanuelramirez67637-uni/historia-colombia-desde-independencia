@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Masacre — Colombia a través del tiempo</title><link rel="stylesheet" href="../estilos/paginas.css"></head>
+<body style="--hero-image:url('../imagenes/historia/palacio.jpg')">
+<header class="topbar"><a class="brand" href="../index.html"><span class="brand-mark">CT</span><span><strong>COLOMBIA</strong><small>A TRAVÉS DEL TIEMPO</small></span></a><a class="button" style="color:var(--ink);border-color:var(--ink)" href="masacres.html">Todas las masacres</a></header>
+<main class="person-layout">
+<aside class="person-portrait" id="massacre-image" style="min-height:430px"></aside>
+<article class="person-content">
+<p class="role" id="massacre-date"></p><h1 id="massacre-name"></h1><p id="massacre-summary"></p>
+<h2>Contexto histórico</h2><p id="massacre-context"></p>
+<h2>Responsables identificados</h2><p id="massacre-responsible"></p>
+<h2>Víctimas y consecuencias</h2><p id="massacre-impact"></p>
+<h2>Investigación y memoria</h2><p id="massacre-memory"></p>
+<div class="source-list"><p class="eyebrow">Fuentes</p><a href="https://centrodememoriahistorica.gov.co/">Centro Nacional de Memoria Histórica</a> · <a href="https://comisiondelaverdad.co/">Comisión de la Verdad</a> · <a href="https://www.jep.gov.co/">JEP</a></div>
+</article>
+</main>
+<script src="../scripts/header.js"></script>
+<script>
+const cases={
+bananeras:{name:'Masacre de las Bananeras',date:'1928 · Ciénaga, Magdalena',summary:'Represión estatal contra una huelga de trabajadores bananeros que produjo muertes y una crisis política.',context:'La huelga reunió a trabajadores de la United Fruit Company y comunidades cercanas. Exigían contratos y mejores condiciones.',responsible:'La fuerza pública actuó para contener la movilización bajo decisiones económicas y políticas del Estado. Las cifras exactas siguen siendo objeto de investigación histórica.',impact:'Las consecuencias fueron sociales y políticas: dieron fuerza a movimientos obreros y críticas al poder económico extranjero.',memory:'Contrastar informes oficiales, testimonios y trabajos del Centro Nacional de Memoria Histórica.'},
+segovia:{name:'Masacre de Segovia y Remedios',date:'11 de noviembre de 1988 · Antioquia',summary:'Ataques coordinados contra poblaciones civiles dejaron decenas de muertos y heridos.',context:'Las acciones ocurrieron en medio de disputas armadas por territorios, economías ilícitas y control local.',responsible:'Investigaciones atribuyeron el hecho a estructuras paramilitares y redes criminales vinculadas al narcotráfico.',impact:'Se produjo desplazamiento, terror colectivo y ruptura del tejido comercial y comunitario.',memory:'Consultar sentencias judiciales y documentos familiares, locales y regionales.'},
+mapiripan:{name:'Masacre de Mapiripán',date:'15–20 de julio de 1997 · Meta',summary:'Paramilitares asesinaron y desaparecieron personas y forzaron el desplazamiento de la población.',context:'El municipio vivía disputas armadas, debilidad institucional y control territorial por actores ilegales.',responsible:'Las investigaciones identificaron a las AUC y también documentaron responsabilidades estatales por omisiones y acciones.',impact:'Destrucción comunitaria, desplazamiento prolongado y litigios nacionales e internacionales.',memory:'Ver sentencias, informes judiciales y archivos de reparación colectiva.'},
+el-salado:{name:'Masacre de El Salado',date:'17–21 de febrero de 2000 · Bolívar',summary:'Las AUC ocuparon el caserío durante varios días, torturaron y asesinaron a habitantes.',context:'El hecho ocurrió en un territorio de disputas entre actores armados y abandono estatal.',responsible:'Bloques paramilitares de las AUC tuvieron responsabilidad reconocida en investigaciones y procesos judiciales.',impact:'Decenas de víctimas, desplazamiento masivo y una comunidad que reconstruyó su memoria pública.',memory:'Los sobrevivientes han publicado testimonios y acompañado procesos de verdad y reparación.'},
+bojava:{name:'Masacre de Bojayá',date:'2 de mayo de 2002 · Chocó',summary:'Una explosión causada por enfrentamientos armados impactó una iglesia con personas civiles refugiadas.',context:'Las comunidades del Atrato vivían la presencia de guerrillas, paramilitares y enfrentamientos armados.',responsible:'Tribunales atribuyeron responsabilidades a las FARC-EP por el artefacto explosivo y reconocieron omisiones estatales.',impact:'Decenas de muertes civiles, desplazamiento y ruptura profunda de comunidades afrocolombianas e indígenas.',memory:'Familias y organizaciones mantienen procesos judiciales, conmemoraciones y reparación colectiva.'}
+};
+const id=new URLSearchParams(location.search).get('caso')||'bananeras';
+const item=cases[id]||cases.bananeras;
+document.title=item.name+' — Colombia a través del tiempo';
+document.querySelector('#massacre-name').textContent=item.name;
+document.querySelector('#massacre-date').textContent=item.date;
+document.querySelector('#massacre-summary').textContent=item.summary;
+document.querySelector('#massacre-context').textContent=item.context;
+document.querySelector('#massacre-responsible').textContent=item.responsible;
+document.querySelector('#massacre-impact').textContent=item.impact;
+document.querySelector('#massacre-memory').textContent=item.memory;
+const images={
+  bananeras:'../imagenes/economia/cafe.jpg',
+  segovia:'../imagenes/historia/palacio.jpg',
+  mapiripan:'../imagenes/masacres/mapiripan.svg',
+  'el-salado':'../imagenes/masacres/bojava.jpg',
+  bojava:'../imagenes/masacres/bojava.jpg'
+};
+const image=document.querySelector('#massacre-image');
+image.style.backgroundImage=`linear-gradient(180deg,transparent 35%,rgba(23,25,29,.86)),url('${images[id]||images.bananeras}')`;
+</script>
+</body></html>

@@ -16,7 +16,8 @@
     ["Narcotráfico", prefix + pagesPrefix + "narcotrafico.html", "narcotrafico.html"],
     ["Masacres", prefix + pagesPrefix + "masacres.html", "masacres.html"],
     ["Guerrillas", prefix + pagesPrefix + "conflicto.html", "conflicto.html"],
-    ["Economía y cultura", prefix + pagesPrefix + "economia-sociedad.html", "economia-sociedad.html"],
+    ["Economía", prefix + pagesPrefix + "economia.html", "economia.html"],
+    ["Cultura", prefix + pagesPrefix + "cultura.html", "cultura.html"],
     ["Personajes", prefix + pagesPrefix + "personajes.html", "personajes.html"]
   ];
 
